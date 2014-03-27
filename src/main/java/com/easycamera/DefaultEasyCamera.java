@@ -24,12 +24,18 @@ public class DefaultEasyCamera implements EasyCamera {
 
     @Override
     public CameraActions startPreview(SurfaceHolder holder) throws IOException {
+        if (holder == null) {
+            throw new NullPointerException("You cannot start preview without a preview surface");
+        }
         camera.setPreviewDisplay(holder);
         return new DefaultCameraActions(camera);
     }
 
     @Override
     public CameraActions startPreview(SurfaceTexture texture) throws IOException {
+        if (texture == null) {
+            throw new NullPointerException("You cannot start preview without a preview texture");
+        }
         camera.setPreviewTexture(texture);
         return new DefaultCameraActions(camera);
     }

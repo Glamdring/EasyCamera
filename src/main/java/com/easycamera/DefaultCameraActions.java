@@ -4,15 +4,15 @@ import android.hardware.Camera;
 
 public class DefaultCameraActions implements EasyCamera.CameraActions {
 
-    private Camera camera;
-    DefaultCameraActions(Camera camera) {
+    private EasyCamera camera;
+    DefaultCameraActions(EasyCamera camera) {
         this.camera = camera;
     }
 
     @Override
     public void takePicture(final EasyCamera.Callbacks callbacks) {
         // wrap EasyCamera callbacks in raw callbacks, if specified. Otherwise pass null
-        camera.takePicture(rawCallbackOrNull(callbacks.getShutterCallback()), rawCallbackOrNull(callbacks.getRawCallback()), rawCallbackOrNull(callbacks.getPostviewCallback()), new Camera.PictureCallback() {
+        camera.getRawCamera().takePicture(rawCallbackOrNull(callbacks.getShutterCallback()), rawCallbackOrNull(callbacks.getRawCallback()), rawCallbackOrNull(callbacks.getPostviewCallback()), new Camera.PictureCallback() {
             @Override
             public void onPictureTaken(byte[] data, Camera camera) {
                 if (callbacks.getJpegCallback() != null) {
@@ -23,6 +23,11 @@ public class DefaultCameraActions implements EasyCamera.CameraActions {
                 }
             }
         });
+    }
+
+    @Override
+    public EasyCamera getCamera() {
+        return camera;
     }
 
     private Camera.PictureCallback rawCallbackOrNull(final EasyCamera.PictureCallback callback) {
@@ -47,10 +52,5 @@ public class DefaultCameraActions implements EasyCamera.CameraActions {
             };
         }
         return null;
-    }
-
-    @Override
-    public void stopPreview() {
-        camera.stopPreview();
     }
 }

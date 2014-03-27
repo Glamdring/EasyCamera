@@ -54,7 +54,7 @@ public interface EasyCamera { // TODO implements AutoCloseable {
 
     public static interface CameraActions {
         void takePicture(Callbacks callbacks);
-        void stopPreview();
+        EasyCamera getCamera();
     }
 
     public final class Callbacks {

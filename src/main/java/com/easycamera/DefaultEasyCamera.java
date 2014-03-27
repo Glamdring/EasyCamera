@@ -2,6 +2,7 @@ package com.easycamera;
 
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
+import android.os.Build;
 import android.view.SurfaceHolder;
 
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class DefaultEasyCamera implements EasyCamera {
         }
         camera.setPreviewDisplay(holder);
         camera.startPreview();
-        return new DefaultCameraActions(camera);
+        return new DefaultCameraActions(this);
     }
 
     @Override
@@ -37,9 +38,13 @@ public class DefaultEasyCamera implements EasyCamera {
         if (texture == null) {
             throw new NullPointerException("You cannot start preview without a preview texture");
         }
-        camera.setPreviewTexture(texture);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
+            camera.setPreviewTexture(texture);
+        } else {
+            throw new IllegalStateException("Your Android version does not support this method.");
+        }
         camera.startPreview();
-        return new DefaultCameraActions(camera);
+        return new DefaultCameraActions(this);
     }
 
     @Override

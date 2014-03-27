@@ -28,6 +28,7 @@ public class DefaultEasyCamera implements EasyCamera {
             throw new NullPointerException("You cannot start preview without a preview surface");
         }
         camera.setPreviewDisplay(holder);
+        camera.startPreview();
         return new DefaultCameraActions(camera);
     }
 
@@ -37,6 +38,7 @@ public class DefaultEasyCamera implements EasyCamera {
             throw new NullPointerException("You cannot start preview without a preview texture");
         }
         camera.setPreviewTexture(texture);
+        camera.startPreview();
         return new DefaultCameraActions(camera);
     }
 

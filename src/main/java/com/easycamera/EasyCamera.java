@@ -1,10 +1,11 @@
 package com.easycamera;
 
+import java.io.IOException;
+
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
 import android.view.SurfaceHolder;
-
-import java.io.IOException;
+import android.view.WindowManager;
 
 /**
  * An interface to make working with the Android Camera easy.
@@ -113,6 +114,11 @@ public interface EasyCamera { // TODO implements AutoCloseable {
     void setDisplayOrientation(int degrees);
 
     /**
+     * Makes camera orientation and display orientation the same
+     */
+    void alignCameraAndDisplayOrientation(WindowManager windowManager);
+    
+    /**
      * See <a href="http://developer.android.com/reference/android/hardware/Camera.html#setZoomChangeListener%28android.hardware.Camera.OnZoomChangeListener%29">Camera.setZoomChangeListener(..)</a>
      */
     void setZoomChangeListener(Camera.OnZoomChangeListener listener);
@@ -132,6 +138,31 @@ public interface EasyCamera { // TODO implements AutoCloseable {
      */
     Camera.Parameters getParameters();
 
+    /**
+     *  See <a href="http://developer.android.com/reference/android/hardware/Camera.html#enableShutterSound%28boolean%29">Camera.enableShutterSound(..)</a>
+     */
+    boolean enableShutterSound (boolean enabled);
+    
+    /**
+     * See <a href="http://developer.android.com/reference/android/hardware/Camera.html#setAutoFocusMoveCallback%28android.hardware.Camera.AutoFocusMoveCallback%29">Camera.setAutoFocusMoveCallback(..)</a>
+     */
+    void setAutoFocusMoveCallback (Camera.AutoFocusMoveCallback cb);
+    
+    /**
+     * See <a href="http://developer.android.com/reference/android/hardware/Camera.html#setFaceDetectionListener%28android.hardware.Camera.FaceDetectionListener%29">Camera.setFaceDetectionListener(..)</a>
+     */
+    void setFaceDetectionListener (Camera.FaceDetectionListener listener);
+
+    /**
+     * See <a href="http://developer.android.com/reference/android/hardware/Camera.html#startFaceDetection%28%29">Camera.startFaceDetection()</a>
+     */
+    void startFaceDetection();
+
+    /**
+     * See <a href="http://developer.android.com/reference/android/hardware/Camera.html#stopFaceDetection%28%29">Camera.stopFaceDetection()</a>
+     */
+    void stopFaceDetection();
+    
     /**
      * Get the underlying android Camera object
      * @return raw camera object

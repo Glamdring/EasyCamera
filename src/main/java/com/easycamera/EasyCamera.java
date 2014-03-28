@@ -100,7 +100,7 @@ public interface EasyCamera { // TODO implements AutoCloseable {
     /**
 	 * See <a href="http://developer.android.com/reference/android/hardware/Camera.html#startSmoothZoom%28int%29">Camera.startSmoothZoom(..)</a>
 	 */
-    void startSmoothZoom(int i);
+    void startSmoothZoom(int value);
 
     /**
 	 * See <a href="http://developer.android.com/reference/android/hardware/Camera.html#stopSmoothZoom%28%29">Camera.stopSmoothZoom()</a>
@@ -110,14 +110,26 @@ public interface EasyCamera { // TODO implements AutoCloseable {
     /**
 	 * See <a href="http://developer.android.com/reference/android/hardware/Camera.html#startSmoothZoom%28int%29">Camera.startSmoothZoom(..)</a>
 	 */
-    void setDisplayOrientation(int i);
+    void setDisplayOrientation(int degrees);
 
+    /**
+     * See <a href="http://developer.android.com/reference/android/hardware/Camera.html#setZoomChangeListener%28android.hardware.Camera.OnZoomChangeListener%29">Camera.setZoomChangeListener(..)</a>
+     */
     void setZoomChangeListener(Camera.OnZoomChangeListener listener);
 
+    /**
+     * See <a href="http://developer.android.com/reference/android/hardware/Camera.html#setErrorCallback%28android.hardware.Camera.ErrorCallback%29">Camera.setErrorCallback(..)</a>
+     */
     void setErrorCallback(Camera.ErrorCallback cb);
 
+    /**
+     * See <a href="http://developer.android.com/reference/android/hardware/Camera.html#setParameters%28android.hardware.Camera.Parameters%29">Camera.setParameters(..)</a> 
+     */
     void setParameters(Camera.Parameters parameters);
 
+    /**
+     * See <a href="http://developer.android.com/reference/android/hardware/Camera.html#getParameters%28%29">Camera.getParameters(..)</a> 
+     */
     Camera.Parameters getParameters();
 
     /**

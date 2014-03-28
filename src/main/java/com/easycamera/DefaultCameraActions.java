@@ -2,6 +2,9 @@ package com.easycamera;
 
 import android.hardware.Camera;
 
+/**
+ * Default implementation of CameraActions
+ */
 public class DefaultCameraActions implements EasyCamera.CameraActions {
 
     private EasyCamera camera;

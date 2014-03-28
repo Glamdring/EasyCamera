@@ -7,14 +7,26 @@ import android.view.SurfaceHolder;
 
 import java.io.IOException;
 
+/**
+ * The default implementation of EasyCamera 
+ *
+ */
 public class DefaultEasyCamera implements EasyCamera {
 
     private Camera camera;
 
+    /**
+     * Gets access to the default camera
+     * See <a href="http://developer.android.com/reference/android/hardware/Camera.html#open%28%29">Camera.open()</a>
+     */
     public static final EasyCamera open() {
         return new DefaultEasyCamera(Camera.open());
     }
 
+    /**
+     * Gets access to a specific camera
+     * See <a href="http://developer.android.com/reference/android/hardware/Camera.html#open%28int%29">Camera.open(..)</a>
+     */
     public static final EasyCamera open(int id) {
         return new DefaultEasyCamera(Camera.open(id));
     }

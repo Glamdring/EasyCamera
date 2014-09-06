@@ -4,3 +4,4 @@ bin/
 .project
 .classpath
 easycamera.iml
+pom.xml.asc

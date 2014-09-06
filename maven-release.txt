@@ -1,4 +1,8 @@
-mvn gpg:sign-and-deploy-file -Durl=https://oss.sonatype.org/service/local/staging/deploy/maven2/ -DrepositoryId=sonatype-nexus-staging -Dfile=target/easycamera-0.0.1.jar -DpomFile=pom.xml -Dgpg.passphrase=PASSPHRASE
+Set ANDROID_HOME env variable, then mvn clean package
+
+mvn gpg:sign-and-deploy-file -Durl=https://oss.sonatype.org/service/local/staging/deploy/maven2/ -DrepositoryId=sonatype-nexus-staging -Dfile=target/easycamera-0.0.1.aar -DpomFile=pom.xml -Dclassifier=aar -Dgpg.passphrase=PASSPHRASE
+
+mvn gpg:sign-and-deploy-file -Durl=https://oss.sonatype.org/service/local/staging/deploy/maven2/ -DrepositoryId=sonatype-nexus-staging -Dfile=target/easycamera-0.0.1.aar -DpomFile=pom.xml -Dgpg.passphrase=PASSPHRASE
 
 mvn gpg:sign-and-deploy-file -Durl=https://oss.sonatype.org/service/local/staging/deploy/maven2/ -DrepositoryId=sonatype-nexus-staging -Dfile=target/easycamera-0.0.1-sources.jar -Dclassifier=sources -DpomFile=pom.xml -Dgpg.passphrase=PASSPHRASE
 

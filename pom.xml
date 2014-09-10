@@ -2,7 +2,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>easycamera</artifactId>
-    <groupId>com.easycamera</groupId>
+    <groupId>net.bozho.easycamera</groupId>
     <version>0.0.1</version>
     <packaging>aar</packaging>
     <name>EasyCamera</name>

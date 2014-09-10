@@ -24,7 +24,7 @@ If you need the `android.hardware.Camera` object, get it via `camera.getRawCamer
 How to import in maven:
 
 	<dependency>
-        <groupId>com.easycamera</groupId>
+        <groupId>net.bozho.easycamera</groupId>
         <artifactId>easycamera</artifactId>
         <version>0.0.1</version>
         <classifier>aar</classifier>

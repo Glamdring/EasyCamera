@@ -1,4 +1,4 @@
-package com.easycamera;
+package net.bozho.easycamera;
 
 import java.io.IOException;
 

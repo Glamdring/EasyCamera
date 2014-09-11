@@ -1,7 +1,7 @@
 EasyCamera
 ==========
 
-Wrapper around the android Camera class that simplifies its usage (<a href="http://techblog.bozho.net/?p=1380&preview=true">read more</a> about the process)
+Wrapper around the android Camera class that simplifies its usage (<a href="http://techblog.bozho.net/?p=1380">read more</a> about the process)
 
 Usage:
 

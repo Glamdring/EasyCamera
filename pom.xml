@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>easycamera</artifactId>
     <groupId>net.bozho.easycamera</groupId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <packaging>aar</packaging>
     <name>EasyCamera</name>
 	<description>A wrapper for working with the Android Camera</description>

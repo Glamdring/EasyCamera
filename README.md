@@ -27,5 +27,5 @@ How to import in maven:
         <groupId>net.bozho.easycamera</groupId>
         <artifactId>easycamera</artifactId>
         <version>0.0.1</version>
-        <classifier>aar</classifier>
+        <type>aar</type>
     </dependency>

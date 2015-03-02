@@ -29,3 +29,7 @@ How to import in maven:
         <version>0.0.1</version>
         <type>aar</type>
     </dependency>
+
+How to import in gradle:
+
+    compile 'net.bozho.easycamera:easycamera:0.0.1:aar@aar'

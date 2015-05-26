@@ -13,8 +13,8 @@ PictureCallback callback = new PictureCallback() {
     public void onPictureTaken(byte[] data, CameraActions actions) {
         // store picture
     }
-}
-actions.takePicture(Callbacks.create().withJpegCallback(callback))
+};
+actions.takePicture(Callbacks.create().withJpegCallback(callback));
 ```
 
 By default, preview stops when a picture is taken. If you want to restart preview, specify `.withRestartPreviewAfterCallbacks(true)` on the `Callbacks` object

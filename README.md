@@ -22,14 +22,15 @@ By default, preview stops when a picture is taken. If you want to restart previe
 If you need the `android.hardware.Camera` object, get it via `camera.getRawCamera()`
 
 How to import in maven:
-
+```xml
 	<dependency>
         <groupId>net.bozho.easycamera</groupId>
         <artifactId>easycamera</artifactId>
         <version>0.0.1</version>
         <type>aar</type>
     </dependency>
-
+```
 How to import in gradle:
-
+```groovy
     compile 'net.bozho.easycamera:easycamera:0.0.1:aar@aar'
+```

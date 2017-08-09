@@ -6,9 +6,10 @@ Wrapper around the android Camera class that simplifies its usage (<a href="http
 Usage:
 
 ```java
-
+// the surface where the preview will be displayed
+SurfaceView surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
 EasyCamera camera = DefaultEasyCamera.open();
-CameraActions actions = camera.startPreview(surface);
+CameraActions actions = camera.startPreview(surfaceView.getHolder());
 PictureCallback callback = new PictureCallback() {
     public void onPictureTaken(byte[] data, CameraActions actions) {
         // store picture
@@ -23,7 +24,7 @@ If you need the `android.hardware.Camera` object, get it via `camera.getRawCamer
 
 How to import in maven:
 ```xml
-	<dependency>
+    <dependency>
         <groupId>net.bozho.easycamera</groupId>
         <artifactId>easycamera</artifactId>
         <version>0.0.1</version>
